@@ -1,0 +1,219 @@
+4.2.1
+- Fixed: Crash on iOS/Metal with "Gaussian Blur" and "Bilateral Gaussian Blur".
+- Fixed: Tiled GPU warnings and improved performances for "Gaussian Blur" and "Bilateral Gaussian Blur" on mobiles.
+
+4.2
+- Added: "Luminosity Only" toggle to "Posterize". It looks so much better !
+- Fixed: Potential memory issue with materials.
+- Fixed: Better scripting support. You no longer need to set the shader yourself on effects created at runtime.
+- Fixed: Saturation & Value not bahaving correctly in "Hue, Saturation, Value". Not sure how I missed this one.
+- Fixed: Flipped screen bug with "Gaussian Blur" and "Bilateral Gaussian Blur" when "Amount < 1.0" with DirectX + MSAA + Forward.
+- Fixed: Initialization issue with "Glitch" when created at runtime.
+- Fixed: "Lookup Filter 3D" not falling back correctly when Texture3D aren't supported on the device.
+- Fixed: Deprecation warning with Unity 5.3+.
+- Fixed: "Kuwahara" not working correctly on some Macs with Intel IGP.
+
+4.1.2
+- Fixed: Unity 4.7 compatibility.
+
+4.1.1
+- Added: "Vertical Scanlines" options to "Analog TV".
+- Fixed: "Frost" not working correctly on iPhone 6/6S.
+- Fixed: "Glitch" not working correctly on iPhone 6/6S.
+
+4.1
+- Added: A highly customizable "Comic Book" effect. Works great with untextured or low-poly scenes !
+- Added: "Letterbox", to add letter or pillarboxing to the render. Very handy for cinematics, can be animated as well.
+- Added: "TV Vignette", a new ultra fast vignette with a more natural shape. Less customizable than the other vignette effects but looks great.
+- Added: "Contrast Gain", a smart contrast adjustment effect. More limited than "S-Curve Contrast" but faster.
+- Added: "Smart Saturation", a port of the "Sat vs Sat" operator from Davinci Resolve, where you control the saturation using a curve to saturate according to the current saturation.
+- Added: "Luminance Contribution" to the "Noise" effect to reduce noise visibility in luminous areas.
+- Added: "Amount" sliders to "Gaussian Blur" and "Bilateral Gaussian Blur".
+- Modified: "Lookup Texture 3D", "Vintage (Fast)" and "LoFi Palette" now work on mobile platforms ! If you used any of them, please see the "Upgrade Guide" in the user manual. As a result, the slower "Lookup Filter" and "Vintage" effects have been deprecated.
+- Fixed: "Noise" not working correctly on some mobile devices.
+- Fixed: Small loss of detail with the "Hue, Saturation, Value" when HDR is enabled.
+- Fixed: Compilation error on DirectX 9 for some of the blur shaders.
+- Fixed: "Photo Filter" was broken.
+- Misc: More editor UI optimizations & tweaks.
+- Misc: Optimized the "Noise" effect ("RGB" mode).
+
+4.0.1
+- Fixed: Performance issue with "Lookup Filter (3D)", "Vintage (Fast)" and "LoFi Palette".
+
+4.0
+- Important: This major update breaks compatibility with previous versions. Please refer to the documentation if you need to update from an earlier version.
+- Modified: Complete code refactoring, cleanup, fixes & tweaks. Makes use of new Unity 5 features when available. Some effects have been optimized as well.
+- Modified: Re-organized the "Component -> Colorful" menu.
+- Modified: Rewrote the "Halftone" effect from scratch. It looks way, way better now.
+- Modified: Rewrote the "Levels" effect from scratch.
+- Modified: The "Kuwahara" radius limit has been bumped to 6.
+- Added: Tooltips (almost) everywhere.
+- Added: Unity 5.1+ users, you can click the top-right help button on Colorful components at any time to jump to the documentation.
+- Added: "LoFi Palette" effect, with 31 presets to give a retro look to your game.
+- Added: "Shadows, Midtones, Highlights" effect (lift/gamma/gain or ASC CDL), also known as the ultimate color correction tool.
+- Added: "Dynamic Lookup", a fast and powerful color corrector using a RGB cube.
+- Added: "Gradient Ramp (Dynamic)", an alternative to "Gradient Ramp" using the builtin gradient editor instead of a texture ramp.
+- Added: High quality "Gaussian Blur" effect.
+- Added: Edge aware, "Bilateral Gaussian Blur" effect.
+- Added: "Grainy Blur", where blur meets noise.
+- Added: "Lens Distortion Blur", an alternative to "Radial Blur" with barrel distortion.
+- Added: "Directional Blur" effect.
+- Added: "Wave Distortion" effect.
+- Added: "Lookup Filter 3D", faster LUT color grading for Shader Model 3.0+ compatible hardware.
+- Added: "Vintage (Fast)", variant of the "Vintage" effect for Shader Model 3.0+ compatible hardware.
+- Added: "Pixel Matrix" effect.
+- Added: "Noise" (monochrome or colored) to add some fine grain to your renders.
+- Added: "S-Curve Contrast", a powerful color correction operator.
+- Added: "Dithering", a fast ordered dithering effect.
+- Added: "Stroke", an artistic effect to turn your renders into brush strokes.
+- Added: "Histogram", a debug graph with Luminance, RGB, Red, Green and Blue view modes.
+- Added: "Vignette" option for "Radial Blur" so you can progressively blur toward the edges of the screen.
+- Added: An alternative algorithm for the "Sharpen" filter.
+- Added: "Wiggle" has been improved. You can now set the Amplitude and it also comes with a slightly slower but better looking mode (optional).
+- Added: A "Shape" slider on the "LED" filter to adjust the LEDs look.
+- Added: "Fast Vignette" now comes with a color mode.
+- Added: "Amount" slider for the "Posterize" effect.
+- Fixed: "Analog TV" and "Frost" not working correctly on some iOS devices.
+- Fixed: "Negative" now works as expected in Linear color space.
+- Fixed: Compilation error on PS4.
+- Misc: Brand new, faster and more complete documentation, as well as a dedicated website !
+
+3.2
+- Added: "IsActive" public property to the "Glitch" effect to detect when it's on or off.
+- Misc: Better handling of shader includes.
+- Misc: Made the components easier to extend / inherit.
+- Fixed: Fixed a small "leak" in the "Vintage" effect. No more GC allocations on every frame.
+- Fixed: Compilation issue when upgrading to Unity 5.1 from an earlier Unity version (UnityEditor API change).
+
+3.1
+- Added: "Hue Focus" to only display the colors in a given hue range and show the rest as black & white. Works great when used before a "Brightness / Contrast / Gamma" effect to give a sort of Sin City look, where only a few colors are visible and the rest is high-contrast black & white.
+- Added: 3 Instagram filters to the "Vintage" effect : Lark, Juno, Reyes.
+- Added: A "Random Activation" option to the "Glitch" effect with customizable time ranges.
+
+3.0.1
+- Fixed: The "Halftone" effect not using the correct aspect ratio for the dots.
+- Fixed: Color-space error in the editor.
+- Fixed: Issue with the startup dialog.
+
+3.0
+- Added: "Kuwahara", to give an oil painting look or simply soften the scene render.
+- Added: "Glitch". Comes with three glitching modes (interference, tearing, complete).
+- Added: "Technicolor", to mimic the classic coloring process from the early days of motion pictures.
+- Added: "Channel Clamper", to clamp each color channel independently to a minimum and maximum value.
+- Added: "Channel Swapper", to combine or swap color channels.
+- Added: "White Balance", to remove unrealistic color cast and shift the neutral tone of the render.
+- Added: A "Custom" quality mode to "Radial Blur". You can now put a custom sample count if you don't like the default presets.
+- Fixed: Better internal file path control. You should now be able to move the Colorful folder safely.
+- Misc: General UI fixes & usability tweaks.
+- Misc: Documentation fixes & additions (+ videos for animated effects).
+- Misc: Removed the documentation from the package, it's now online only. Benefits : the package size is a lot smaller and imports faster.
+- Misc: Bumped the minimum Unity version to 4.5.
+
+2.2.3
+- Fixed: "Analog TV" failing on some platforms.
+- Fixed: A bug introduced in 2.2.1 with "Lookup Filter" and "Vintage" when working in Linear color space.
+
+2.2.2
+- Fixed: Bug with "Led" and "Pixelate" in Unity 5.
+- Misc: Unity 5 package.
+
+2.2.1
+- Added: An "Amount" slider to "Lookup Filter" and "Vintage" to allow blending on the effects.
+
+2.2
+- Added: 5 Instagram filters to the "Vintage" effect : Aden, Crema, Ludwig, Perpetua, Slumber.
+
+2.1.1
+- Added: A "Scanlines Offset" option to the "Analog TV" effect to scroll the scanlines upwards/downwards.
+
+2.1
+- Added: "Vintage" comes with 19 fast Instagram filters : 1977, Amaro, Brannan, Earlybird, Hefe, Hudson, Inkwell, Kelvin, LoFi, Mayfair, Nashville, Rise, Sierra, Sutro, Toaster, Valencia, Walden, Willow, X-Pro II.
+
+2.0.2
+- Fixed: Bug with "Lookup Filter" in linear mode.
+
+2.0.1
+- Fixed: HDR bug with the "Lookup Filter".
+- Modified: The "Lookup Filter" documentation has been updated. Make sure the "Aniso Level" on your LUTs is set to 0.
+
+2.0
+- Added: A new quickstart launcher when you import or update Colorful.
+- Added: "About Colorful" and "Colorful Manual" in the Help menu.
+- Added: "Contrast Vignette". The old "Fast Vignette" plays on darkness and saturation, this new one focuses on darkness and contrast enhancement which results in a more photographic look.
+- Added: A "Center" property to "Fast Vignette" to change the center point.
+- Added: "Hue / Saturation / Value" now comes with an optional advanced mode. This mode is a bit slower but way more powerful as you can now work separately on reds, yellows, greens, cyans, blues and magentas (like Photoshop).
+- Added: "Vibrance" now comes with an optional advanced mode which uses a different algorithm and let you tweak how channels (RGB) are affected.
+- Modified: The "Levels" editor has been rewritten from scratch. It's now more efficient and comes with a new "Auto B&W" feature (see the doc). Its public API hasn't changed so it should be compatible with the old one.
+- Modified: Bumped the minimum Unity version to 4.3. If for some reason you need a version compatible with Unity 3.5, please contact me.
+- Misc: Massive optimizations to the "Hue / Saturation / Value" shader.
+- Misc: Global cleanup pass and minor optimizations on all editor classes and shaders.
+- Misc: Lots of UI fixes & usability tweaks.
+- Misc: A few documentation fixes & additions.
+
+1.7.1
+- Added: "Auto Timer" & "Auto Phase" options to "Wiggle" and "Analog TV".
+- Added: Icons for the components to make them easier to spot.
+- Fixed: The LUT texture used with "Lookup Filter" now bypasses sRGB sampling so it works correctly with the Linear color space.
+- Misc: A few documentation fixes & additions.
+
+1.7
+- Added: "Halftone" (CMYK and Black & White).
+- Added: "Cross Stitch".
+- Fixed: Serialization bug affecting all effects' custom inspectors.
+
+1.6.1
+- Added: Optional pixel perfect mode to the "Pixelate" and "LED" effects.
+- Added: A ratio settings (can be set to automatic) to the "Pixelate" and "LED" effects to change the cell shape.
+- Added: Optional noise pass on the Threshold effect.
+- Added: HeatRamp.png in the resources folder (can be used to emulate a thermal vision with the Gradient Ramp effect).
+- Misc: Documentation update.
+
+1.6
+- Added: "Convolution Matrix 3x3".
+- Added: "Blend" (works with Texture2D and MovieTexture), featuring 21 blending modes : Darken, Multiply, Color Burn, Linear Burn, Darker Color, Lighten, Screen, Color Dodge, Linear Dodge (Add), Lighter Color, Overlay, Soft Light, Hard Light, Vivid Light, Linear Light, Pin Light, Hard Mix, Difference, Exclusion, Subtract, Divide.
+- Added: New option to desaturate the "Fast Vignette".
+- Misc: Refactoring, improvements and optimizations of the following effects : Analog TV, Fast Vignette, Frost, Grayscale, Radial Blur.
+
+1.5
+- Added: "Gradient Ramp".
+- Added: "Lookup Filter" (advanced color grading).
+- Added: "Negative" (with proper transition).
+- Added: "Wiggle" (underwater distortion).
+- Fixed: Unity 4.3 compatibility.
+- Misc: General code cleaning, a few minor fixes and various optimizations.
+- Misc: Full documentation.
+
+1.4.1
+- Fixed: A weird bug with "RGB Split" only working in Directx 11 mode in some setups.
+
+1.4
+- Added: "RGB Split".
+- Added: "Sharpen".
+
+1.3.4
+- Fixed: Bug with Unity 4.1 preventing most shaders to work correctly.
+
+1.3.2
+- Added: A new slider to fade the "Double vision" effect.
+- Fixed: Brightness bug in "Double vision".
+- Fixed: A null pointer exception in "Levels" that could happen in the Editor.
+
+1.3.1
+- Misc: Performance improvements.
+- Misc: Code cleaning.
+
+1.3
+- Fixed: Now compatible with Unity 4 and DirectX 11.
+- Fixed: Lots of small bugs.
+
+1.2
+- Added: "Analog TV", emulates a CRT screen with scanlines, static noise and barrel distortion !
+- Added: "Double Vision".
+- Added: "Frost", that looks like viewing through an ice-frosted glass (can be used as a vignette too, to "freeze" the screen progressively).
+
+1.1
+- Modified: "Photo Filter" now takes a Color as input instead of three floats.
+- Added: "Radial Blur", also known as "Zoom" Blur.
+
+1.0
+- Misc: Initial release.
